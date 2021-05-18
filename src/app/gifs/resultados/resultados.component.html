@@ -1,0 +1,27 @@
+<!-- <ul>
+    <li *ngFor="let gif of resultados">
+        {{gif.title}}
+    </li>
+</ul> -->
+<!--Aqui el comienzo pusimos que el resultados era de tipo any pero despues
+incorporamos una interface con ayuda de una pagina que vimos en udemy 
+con eso le decimos que resultados era de tipo Gif 
+pagina de ayuda https://quicktype.io/-->
+<div class="row">
+    <div class="col-md-4 col-sm-6"
+    *ngFor="let gif of resultados">
+    <div class="card">
+        <img [src]="gif.images.downsized_medium.url"
+        [alt]="gif.title"
+        class="card-img-top">
+        <div class="card-body">
+            <p class="card-text">
+                {{gif.title}}
+            </p>
+        </div>
+    </div>
+    </div>
+</div>
+
+<!--en src se ponen los [] para ingresar codigo typescript si no lo tuvieran 
+lo toman como un string normal -->
